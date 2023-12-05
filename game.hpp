@@ -16,3 +16,5 @@ void playGame(int size, int nobs);
 // helper function to prompt user to play again
 void playAgainPrompt(int size, int nobs);
 
+void displayHelp();
+

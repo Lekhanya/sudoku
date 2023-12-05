@@ -15,6 +15,20 @@ using namespace std;
 
 void playGame(int size, int nobs);
 
+void dispalyHelp(){
+    
+    cout << 
+    "   1. To fill in cell, enter the column number, \n\
+    row number, and value you want to enter (1 based). \n\
+    Separate with spaces, commas, or any other delimiter\n\
+    (besides an integer of course)\n\
+    2. At any time, enter \"Solve\" to have the backtracer\n\
+    solve the game for you based on your current position.\n\
+    3. If you've walked yourself into an impossible configuration \n\
+    you will be prompted to first clear the board\n\
+    4. Once solved, you will be asked if you want to play again \n" 
+    << endl;
+}
 
 //play game again
 void playAgainPrompt(int size, int nobs){
@@ -36,7 +50,7 @@ void playGame(int size, int nobs){
 
     string user_entry;
     bool solverSucces = false;
-    Board board = generatePuzzle(size,nobs);
+    Board board = generatePuzzle(size, nobs);
     regex rgx("[0-9]{1,}"); // For parsing user input
     smatch match;
 
@@ -45,10 +59,8 @@ void playGame(int size, int nobs){
     // Repeat until puzzle is solved
     do {
 
-
         board.printPuzzle(); // print puzzle
         getline(cin, user_entry); // get user input
-
 
         // Check for user commands
         if (user_entry == "Solve" || user_entry == "solve"){
@@ -61,6 +73,11 @@ void playGame(int size, int nobs){
             board.clearPuzzle();
             continue;
         }
+
+        if (user_entry == "help" || user_entry == "Help" 
+            || user_entry == "h"){
+                dispalyHelp();
+            }
 
         // Assuming no special command, attempt to parse user input
         int count = 0;

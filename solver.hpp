@@ -41,7 +41,7 @@ public:
             for(int j = 0; j < N; j++)
                 immutable[i][j] = true;
 
-        // matrix to track which values are causing infeasibilitsy
+        // matrix to track which values are causing infeasibility
         // these are problem cells that will be
         // highlighted in red during gameplay
         infeasible = new bool*[N];

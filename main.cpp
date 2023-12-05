@@ -14,6 +14,7 @@ Main driver of Sudoku game
 
 using namespace std;
 
+
 int main(int argc, char* argv[]){
 
     int seed; //random seed
@@ -99,6 +100,7 @@ int main(int argc, char* argv[]){
     cout << "===========================================" << endl;
     cout << "============ Welcome to Sudoku! ===========" << endl;
     cout << "===========================================" << endl;
+    cout << "===========Type \"help\" for help===========" << endl;
 
     // Play game or run simulations
     if (sim == 0){
